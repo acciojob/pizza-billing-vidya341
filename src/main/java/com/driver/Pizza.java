@@ -47,7 +47,7 @@ public class Pizza {
             ischeeseadded=true;
             price = price+cheeseprice;
         }
-        bill = bill+"Extra Cheese Added: "+cheeseprice+"\n";
+
     }
 
     public void addExtraToppings(){
@@ -58,7 +58,7 @@ public class Pizza {
             istoppingsadded=true;
             price = price+toppingsprice;
         }
-        bill = bill+"Extra Toppings Added: "+toppingsprice+"\n";
+
     }
 
     public void addTakeaway(){
@@ -68,7 +68,7 @@ public class Pizza {
             isbagadded=true;
             price = price+20;
         }
-        bill = bill+"Paperbag Added: 20"+"\n";
+
     }
 
     public String getBill(){
@@ -76,6 +76,14 @@ public class Pizza {
         if(isbillgenerated==false)
         {
             isbillgenerated=true;
+            if(ischeeseadded)
+                bill = bill+"Extra Cheese Added: "+cheeseprice+"\n";
+            if(istoppingsadded)
+                bill = bill+"Extra Toppings Added: "+toppingsprice+"\n";
+            if(isbagadded)
+                bill = bill+"Paperbag Added: 20"+"\n";
+
+
             bill = bill+"Total Price: "+price;
 
         }
