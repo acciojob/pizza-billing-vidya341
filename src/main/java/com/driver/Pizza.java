@@ -31,8 +31,8 @@ public class Pizza {
            price = 400;
            toppingsprice = 120;
         }
-        //this.cheeseprice =80;
-        //this.paperprice = 20;
+        cheeseprice =80;
+        paperprice = 20;
         bill = "Base Price Of The Pizza: "+price+"\n";
     }
 
@@ -45,9 +45,9 @@ public class Pizza {
         if(ischeeseadded==false)
         {
             ischeeseadded=true;
-            price = price+80;
+            price = price+cheeseprice;
         }
-        bill = "Extra Cheese Added: 80"+"\n";
+        bill = bill+"Extra Cheese Added: "+cheeseprice+"\n";
     }
 
     public void addExtraToppings(){
@@ -56,15 +56,7 @@ public class Pizza {
         if(istoppingsadded==false)
         {
             istoppingsadded=true;
-            if(isVeg)
-            {
-                toppings_price = 70;
-                price = price+70;
-            }
-            else {
-                toppings_price = 120;
-                price = price+120;
-            }
+            price = price+toppings_price;
         }
         bill = bill+"Extra Toppings Added: "+toppings_price+"\n";
     }
