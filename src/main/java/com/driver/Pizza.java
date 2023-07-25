@@ -14,17 +14,26 @@ public class Pizza {
 
     private boolean isbillgenerated;
 
+    private int cheeseprice;
+    private int toppingsprice;
+
+    private int paperprice;
+
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
         if(isVeg)
         {
             price = 300;
+            toppingsprice = 70;
         }
         else {
            price = 400;
+           toppingsprice = 120;
         }
-        bill = "Base Price Of The Pizza:"+price+"/n";
+        //this.cheeseprice =80;
+        //this.paperprice = 20;
+        bill = "Base Price Of The Pizza: "+price+"\n";
     }
 
     public int getPrice(){
@@ -38,7 +47,7 @@ public class Pizza {
             ischeeseadded=true;
             price = price+80;
         }
-        bill = "Extra Cheese Added:80"+"/n";
+        bill = "Extra Cheese Added: 80"+"\n";
     }
 
     public void addExtraToppings(){
@@ -57,7 +66,7 @@ public class Pizza {
                 price = price+120;
             }
         }
-        bill = bill+"Extra Toppings Added:"+toppings_price+"/n";
+        bill = bill+"Extra Toppings Added: "+toppings_price+"\n";
     }
 
     public void addTakeaway(){
@@ -67,7 +76,7 @@ public class Pizza {
             isbagadded=true;
             price = price+20;
         }
-        bill = bill+"Paperbag Added:20"+"/n";
+        bill = bill+"Paperbag Added: 20"+"\n";
     }
 
     public String getBill(){
@@ -75,7 +84,7 @@ public class Pizza {
         if(isbillgenerated==false)
         {
             isbillgenerated=true;
-            bill = bill+"Total Price:"+price;
+            bill = bill+"Total Price: "+price;
 
         }
         return this.bill;
