@@ -52,13 +52,13 @@ public class Pizza {
 
     public void addExtraToppings(){
         // your code goes here
-        int toppings_price=0;
+
         if(istoppingsadded==false)
         {
             istoppingsadded=true;
-            price = price+toppings_price;
+            price = price+toppingsprice;
         }
-        bill = bill+"Extra Toppings Added: "+toppings_price+"\n";
+        bill = bill+"Extra Toppings Added: "+toppingsprice+"\n";
     }
 
     public void addTakeaway(){
